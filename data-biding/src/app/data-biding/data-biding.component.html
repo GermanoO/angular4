@@ -13,7 +13,7 @@
 
   </article> -->
 
-  <article>
+ <!-- <article>
     <h3>Class e Style Binding</h3>
 
     <div>
@@ -37,7 +37,7 @@
       <div class="alert alert-danger" role="alert"
         [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
         Só aparece em caso de erro.
-      </div>
+      </div> -->
 
     <!--  <div class="alert" role="alert"
       [class.alert-primary]="classe.value == 'alert-primary'">
@@ -71,8 +71,34 @@
       [class.alert-dark]="classe.value == 'alert-dark'">
         A simple dark alert—check it out!
       </div>
-    -->
+    
 
+    </div>
+  </article> -->
+</section>
+
+<section>
+  <article>
+    <h3> Event Binding </h3>
+    <div>
+      <button (click)="botaoClicado()"
+      class="btn btn-primary">Me clique!</button>
+    
+    <br><br>
+
+    <input type="text" 
+    (keyup)="onKeyUp($event)"
+    (keyup.enter)="salvarValor($event.target.value)"
+    (blur)= "salvarValor(campoInput.value)"
+    #campoInput/>
+    <p> Valor Atual: {{ valorAtual }}</p>
+    <p> Valor Salvo: {{ valorSalvo }}</p>
+
+    <span 
+    (mouseover)="onMouseOver()"
+    (mouseout)="onMouseOver()"
+    [class.highlight]="isMouseOver">
+    Passe o mouse sobre mim</span>
     </div>
   </article>
 </section>
