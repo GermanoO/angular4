@@ -1,5 +1,6 @@
+<!--
 <section class="property-binding">
-<!--  <article>
+  <article>
     <h3>Interpolação</h3>
     <p> Exemplo Interpolação: {{ url }}</p>
     <p> Resultado de 2+7 é: {{ 2 + 7 }}</p>
@@ -74,9 +75,9 @@
     
 
     </div>
-  </article> -->
-</section>
-
+  </article> 
+</section> -->
+<!--
 <section>
   <article>
     <h3> Event Binding </h3>
@@ -100,5 +101,45 @@
     [class.highlight]="isMouseOver">
     Passe o mouse sobre mim</span>
     </div>
+  </article>
+</section>
+
+-->
+
+<!--
+<section>
+  <article>
+    <h3>Two way data biding</h3>
+    <div>
+       <input type="text" 
+        [value] = "nome"
+        (input) = "nome = $event.target.value"
+       />
+
+       <input type="text" [(ngModel)]="nome"/>
+    </div>
+    <p>Você  digitou o nome: {{ nome }}</p>
+    <div>
+      <input type="text" [(ngModel)]="pessoa.nome" />
+      <input type="text" [(ngModel)]="pessoa.idade" />
+
+    </div>
+    <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos.</p>
+
+  </article>
+</section>
+
+
+<app-meu-form></app-meu-form>
+-->
+<section>
+  <article>
+    <h3>Input/Output Properties</h3>
+
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+
+    <contador [valor]="valorInicial"
+      (mudouValor)="onMudouValor($event)">
+  </contador>
   </article>
 </section>
